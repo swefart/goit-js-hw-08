@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", setDataToForm())
 formEl.addEventListener('submit', submitForm)
 
 
-
 function foo(e) {  
   formData[e.target.name] = e.target.value
   save(STORAGE_KEY, formData)
@@ -22,8 +21,9 @@ function foo(e) {
 
 function setDataToForm() {
     if (!data) return 
-    formEl.elements.email.value = data.email;
-    formEl.elements.message.value = data.message;
+    const { email = "", message = ""} = data;
+    formEl.elements.email.value = email;
+    formEl.elements.message.value = message;
 }
 
 function submitForm(e) {
