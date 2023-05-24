@@ -21,7 +21,8 @@ function foo(e) {
 
 function setDataToForm() {
     if (!data) return 
-    const { email = "", message = ""} = data;
+    const { email = "", message = "" } = data;
+    formData = data;
     formEl.elements.email.value = email;
     formEl.elements.message.value = message;
 }
